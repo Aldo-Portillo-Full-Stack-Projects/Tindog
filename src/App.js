@@ -14,16 +14,19 @@ function App() {
 
   const [displayIcon, setDisplayIcon] = React.useState(false)
 
+  const [renderIcon, setRenderIcon] = React.useState(false)
+
   console.table(dogData)
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
   function likeButton (id) {
     setDisplayIcon(true)
+    setRenderIcon(true)
 
     setTimeout(() => {
       setDogIndex(prevIndex => prevIndex + 1) 
-      setDisplayIcon(false)
+      setRenderIcon(false)
     }, 500)
 
     const updatedDogData = dogData.map(dog => {
@@ -43,10 +46,11 @@ function App() {
   }
 
   function nopeButton (id) {
-
+    setDisplayIcon(false)
+    setRenderIcon(true)
     setTimeout(() => {
       setDogIndex(prevIndex => prevIndex + 1) 
-      setDisplayIcon(false)
+      setRenderIcon(false)
     }, 500)
 
     const updatedDogData = dogData.map(dog => {
@@ -69,7 +73,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon}/>} />
+        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/>} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
