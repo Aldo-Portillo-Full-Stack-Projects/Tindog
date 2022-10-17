@@ -7,7 +7,9 @@ import dogs from './data/data'
 
 function App() {
 
-  const [dogIndex, setDogIndex] = React.useState(0)
+  const [dogData, setDogData] = React.useState(dogs);
+
+  const [dogIndex, setDogIndex] = React.useState(0);
 
   function likeProfile () {
     setDogIndex(prevIndex => prevIndex + 1)
@@ -18,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Profile img={dogs[dogIndex].avatar} name={dogs[dogIndex].name} age={dogs[dogIndex].age} bio={dogs[dogIndex].bio}/>
+      <Profile img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio}/>
       <Footer likeProfile={likeProfile} skipProfile={skipProfile}/>
     </div>
   );
