@@ -1,7 +1,15 @@
 import React from 'react'
+import FavoritedDog from '../components/FavoritedDog'
 
-export default function liked() {
+export default function liked({data}) {
+
+    const filterFavorites = data.filter(dog => dog.hasBeenLiked === true)
+
+    const renderFavorites = filterFavorites.map(dog => <FavoritedDog name={dog.name} avatar={dog.avatar}/>)
+
+    console.log(filterFavorites)
   return (
-    <div>This is your liked profiles</div>
+    <div>{renderFavorites}</div>
+
   )
 }

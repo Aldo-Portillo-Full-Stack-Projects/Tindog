@@ -1,7 +1,5 @@
 import React from 'react';
-import Footer from './components/Footer';
 import Header from './components/Header';
-import Profile from './components/Profile';
 
 import Liked from './pages/Liked';
 import SwipePage from './pages/SwipePage';
@@ -40,7 +38,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} decisionButton={decisionButton}/>} />
-        <Route path="/liked" element={<Liked />} />
+        <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
   );
