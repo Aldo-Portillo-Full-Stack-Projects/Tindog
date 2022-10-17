@@ -9,6 +9,18 @@
   margin: 20px;
 }
 
+.favorite-dog-card{
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.favorite-dog-card > img{
+  height: 100px;
+  width: 100px;
+}
+
 
 .footer-container{
   display: flex;
