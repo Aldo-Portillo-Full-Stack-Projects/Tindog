@@ -18,24 +18,50 @@ function App() {
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
-  function decisionButton (id, like) {
+  function likeButton (id) {
     setDisplayIcon(true)
+
     setTimeout(() => {
       setDogIndex(prevIndex => prevIndex + 1) 
       setDisplayIcon(false)
     }, 500)
+
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
         return {
           ...dog,
           hasBeenSwiped: true,
-          hasBeenLiked: like,
+          hasBeenLiked: true,
         }
       }
       return dog
-    })
+    }
+    )
 
     setDogData(updatedDogData)
+
+  }
+
+  function nopeButton (id) {
+
+    setTimeout(() => {
+      setDogIndex(prevIndex => prevIndex + 1) 
+      setDisplayIcon(false)
+    }, 500)
+
+    const updatedDogData = dogData.map(dog => {
+      if(dog.id === id){
+        return {
+          ...dog,
+          hasBeenSwiped: true,
+        }
+      }
+      return dog
+    }
+    )
+
+    setDogData(updatedDogData)
+
   }
 
 
@@ -43,7 +69,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} decisionButton={decisionButton} displayIcon={displayIcon}/>} />
+        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon}/>} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
