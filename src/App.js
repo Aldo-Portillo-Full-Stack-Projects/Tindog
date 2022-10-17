@@ -13,7 +13,7 @@ function App() {
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
-  function likeProfile (id, like) {
+  function decisionButton (id, like) {
     setDogIndex(prevIndex => prevIndex + 1)
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
@@ -30,18 +30,11 @@ function App() {
   }
 
 
-
-  function skipProfile () {
-    setDogIndex(prevIndex => prevIndex + 1)
-  }
-
-  console.log('id from app: ' + dogData[dogIndex].id)
-
   return (
     <div className="App">
       <Header />
       <Profile img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio}/>
-      <Footer id={dogData[dogIndex].id} likeProfile={likeProfile} skipProfile={skipProfile}/>
+      <Footer id={dogData[dogIndex].id} decisionButton={decisionButton}/>
     </div>
   );
 }
