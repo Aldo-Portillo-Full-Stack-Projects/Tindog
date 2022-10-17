@@ -17,7 +17,7 @@ function App() {
   const [dogIndex, setDogIndex] = React.useState(0);
 
   function decisionButton (id, like) {
-    setDogIndex(prevIndex => prevIndex + 1)
+    setTimeout(() => setDogIndex(prevIndex => prevIndex + 1), 500)
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
         return {
