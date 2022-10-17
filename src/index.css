@@ -1,8 +1,21 @@
-.footer{
+.header-container{
+  height: 10%;
+}
+
+.profile-container{
+  height: 80vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+
+.footer-container{
   display: flex;
   justify-content: space-around;
+  height: 10%;
 }
-.footer > img {
-  max-height: 80px;
-  max-width: 80px;
+.footer-container > img {
+  max-height: 70px;
+  max-width: 70px;
 }
