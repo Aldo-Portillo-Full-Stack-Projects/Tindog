@@ -3,6 +3,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Profile from './components/Profile';
 
+import {Routes, Route} from 'react-router-dom'
+
 import dogs from './data/data'
 
 function App() {
@@ -33,7 +35,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Profile img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio}/>
+      <Routes>
+        <Route exact path="/" element={<Profile img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio}/>} />
+      </Routes>
       <Footer id={dogData[dogIndex].id} decisionButton={decisionButton}/>
     </div>
   );
