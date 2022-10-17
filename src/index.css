@@ -1,5 +1,7 @@
 .header-container{
   height: 10%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile-container{
