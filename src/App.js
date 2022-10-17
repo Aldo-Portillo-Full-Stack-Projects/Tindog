@@ -13,14 +13,14 @@ function App() {
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
-  function likeProfile (id) {
+  function likeProfile (id, like) {
     setDogIndex(prevIndex => prevIndex + 1)
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
         return {
           ...dog,
           hasBeenSwiped: true,
-          hasBeenLiked: true,
+          hasBeenLiked: like,
         }
       }
       return dog
