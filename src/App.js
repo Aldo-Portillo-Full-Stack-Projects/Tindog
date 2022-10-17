@@ -12,12 +12,18 @@ function App() {
 
   const [dogData, setDogData] = React.useState(dogs);
 
+  const [displayIcon, setDisplayIcon] = React.useState(false)
+
   console.table(dogData)
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
   function decisionButton (id, like) {
-    setTimeout(() => setDogIndex(prevIndex => prevIndex + 1), 500)
+    setDisplayIcon(true)
+    setTimeout(() => {
+      setDogIndex(prevIndex => prevIndex + 1) 
+      setDisplayIcon(false)
+    }, 500)
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
         return {
@@ -37,7 +43,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} decisionButton={decisionButton}/>} />
+        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} decisionButton={decisionButton} displayIcon={displayIcon}/>} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
