@@ -26,7 +26,62 @@ const dogs = [
         hasBeenSwiped: false,
         hasBeenLiked: false,
         id: nanoid(),
-    }
+    },
+    {
+        name: "Cornelius",
+        avatar: require("./cornelius.png"),
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false,
+        id: nanoid(),
+    },
+    {
+        name: "Ghost",
+        avatar: require("./ghost.png"),
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false,
+        id: nanoid(),
+    },
+    {
+        name: "Jack",
+        avatar: require("./jack.png"),
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false,
+        id: nanoid(),
+    },
+    {
+        name: "Scooby",
+        avatar: require("./scooby.png"),
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false,
+        id: nanoid(),
+    },
+    {
+        name: "Sydney",
+        avatar: require("./sydney.png"),
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false,
+        id: nanoid(),
+    },
+    {
+        name: "Thomas",
+        avatar: require("./thomas.jpg"),
+        age: 30,
+        bio: "How you doin?",
+        hasBeenSwiped: false,
+        hasBeenLiked: false,
+        id: nanoid(),
+    },
+
 ]
 
 export default dogs
