@@ -12,7 +12,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
 }
+
+.liked-nope-image{
+  width: 7rem;
+  transform: rotateY(0deg) rotate(-45deg);
+
+}
+
 
 .favorite-dog-card{
   display: flex;
