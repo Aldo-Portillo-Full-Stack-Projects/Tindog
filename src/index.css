@@ -1,11 +1,16 @@
+.App{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .header-container{
-  height: 10%;
   display: flex;
   justify-content: space-between;
 }
 
 .profile-container{
-  height: 80vh;
+  height: 60vh;
   border: 1px solid black;
   border-radius: 10px;
   margin: 20px;
@@ -41,6 +46,8 @@
   height: 10%;
 }
 .footer-container > img {
-  max-height: 70px;
-  max-width: 70px;
+  max-height: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 30px;
 }
