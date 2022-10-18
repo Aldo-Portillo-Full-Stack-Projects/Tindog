@@ -32,6 +32,18 @@
 }
 
 
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-image {
+  height: auto;
+  width: 100px;
+}
+
 .favorite-dog-card{
   display: flex;
   font-size: 2rem;
