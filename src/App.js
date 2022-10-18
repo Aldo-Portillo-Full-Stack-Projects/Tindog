@@ -16,7 +16,7 @@ function App() {
 
   const [renderIcon, setRenderIcon] = React.useState(false)
 
-  console.table(dogData)
+  //console.table(dogData)
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
@@ -68,12 +68,22 @@ function App() {
 
   }
 
+  const [endList, setEndList] = React.useState(false)
+
+  React.useEffect(()=> {
+    
+    const isListDone = dogData.every(function(dog){
+      return dog.hasBeenSwiped === true
+    })
+    console.log(isListDone)
+    setEndList(isListDone)
+  }, [dogData])
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/>} />
+        <Route exact path="/" element={endList === false ? <SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <h1>Hello</h1>} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>

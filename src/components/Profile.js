@@ -5,7 +5,6 @@ export default function Profile({img, name, age, bio, displayIcon, renderIcon}) 
 
   return (
     <div className='profile-container' style={{backgroundImage: `url(${img})`, backgroundRepeat: 'no-repeat'}}>
-        {/* <img src={img} alt="" /> */}
         <div className='liked-box'>
           {renderIcon && <img className='liked-nope-image' src={displayIcon ? require('../icons/like-image.png'): require('../icons/nope-image.png')} />}
         </div>
