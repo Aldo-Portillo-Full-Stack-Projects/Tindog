@@ -17,9 +17,12 @@ function App() {
 
   const [renderIcon, setRenderIcon] = React.useState(false)
 
-  //console.table(dogData)
-
   const [dogIndex, setDogIndex] = React.useState(0);
+
+  const [endList, setEndList] = React.useState(false)
+    //console.table(dogData)
+
+
 
   function likeButton (id) {
     setDisplayIcon(true)
@@ -69,16 +72,14 @@ function App() {
 
   }
 
-  const [endList, setEndList] = React.useState(false)
-
   React.useEffect(()=> {
-    
     const isListDone = dogData.every(function(dog){
       return dog.hasBeenSwiped === true
     })
     console.log(isListDone)
     setEndList(isListDone)
   }, [dogData])
+
 
   return (
     <div className="App">
