@@ -3,6 +3,7 @@ import Header from './components/Header';
 
 import Liked from './pages/Liked';
 import SwipePage from './pages/SwipePage';
+import Error from './pages/Error';
 
 import {Routes, Route} from 'react-router-dom'
 
@@ -83,7 +84,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={endList === false ? <SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <h1>Hello</h1>} />
+        <Route exact path="/" element={endList === false ? <SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
