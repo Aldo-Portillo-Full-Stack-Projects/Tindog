@@ -14,4 +14,6 @@
 
 - Update 1: Attempt to just add /Tindog as the home route to fix the issue but I read up on BrowserRouter not wotking with ghpages and instead to use Hashrouter so if it does not work that is what I will use next
 
+- Update 2: It worked! But I will Read on Hashrouter because I feel like I just added a bandaid to the problem instead of fixing it
+
 [ActiveSite](https://aldoportillo.github.io/Tindog/)
