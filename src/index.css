@@ -9,6 +9,11 @@
   justify-content: space-between;
 }
 
+.header-icon-sides{
+  height: 30px;
+  width: 30px;
+}
+
 .profile-container{
   height: 60vh;
   border: 1px solid black;
