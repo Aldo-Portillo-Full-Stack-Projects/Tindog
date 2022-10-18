@@ -72,15 +72,6 @@ const dogs = [
         hasBeenLiked: false,
         id: nanoid(),
     },
-    {
-        name: "Thomas",
-        avatar: require("./thomas.jpg"),
-        age: 30,
-        bio: "How you doin?",
-        hasBeenSwiped: false,
-        hasBeenLiked: false,
-        id: nanoid(),
-    },
 
 ]
 
