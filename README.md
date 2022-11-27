@@ -16,4 +16,6 @@
 
 - Update 2: It worked! But I will Read on Hashrouter because I feel like I just added a bandaid to the problem instead of fixing it
 
+- Update 3: I will stop using GH pages and user Vercel and Render to host a fullstack app. I will start working on the server 27 November
+
 [ActiveSite](https://aldoportillo.github.io/Tindog/)
