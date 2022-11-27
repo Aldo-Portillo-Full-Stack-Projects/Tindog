@@ -1,0 +1,70 @@
+.App{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.header-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-icon-sides{
+  height: 30px;
+  width: 30px;
+}
+
+.profile-container{
+  height: 60vh;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.liked-nope-image{
+  width: 7rem;
+  transform: rotateY(0deg) rotate(-45deg);
+
+}
+
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-image {
+  height: auto;
+  width: 100px;
+}
+
+.favorite-dog-card{
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.favorite-dog-card > img{
+  height: 100px;
+  width: 100px;
+}
+
+
+.footer-container{
+  display: flex;
+  justify-content: space-around;
+  height: 10%;
+}
+.footer-container > img {
+  max-height: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  max-width: 30px;
+}
