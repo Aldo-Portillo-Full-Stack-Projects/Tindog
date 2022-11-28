@@ -1,8 +1,17 @@
+#root{
+  background-color: whitesmoke;
+  height: 100vh;
+}
+
 .App{
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  height: 90vh;
+  
 }
+
+
 
 .header-container{
   display: flex;
@@ -23,6 +32,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
+  background-color: white;
 }
 
 .liked-nope-image{
@@ -61,10 +71,13 @@
   display: flex;
   justify-content: space-around;
   height: 10%;
+  padding-top: 20px;
 }
 .footer-container > img {
   max-height: 30px;
   border-radius: 25px;
   padding: 10px;
   max-width: 30px;
+  background-color: white;
+  box-shadow:  0px 5px 10px black;
 }
