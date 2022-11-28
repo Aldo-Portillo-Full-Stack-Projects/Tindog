@@ -85,7 +85,7 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/Tindog" element={endList === false ? <SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
+        <Route exact path="/" element={endList === false ? <SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
