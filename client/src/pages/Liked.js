@@ -9,7 +9,7 @@ export default function liked({data}) {
 
     console.log(filterFavorites)
   return (
-    <div>{renderFavorites}</div>
+    <div className='liked-dogs'>{renderFavorites}</div>
 
   )
 }
