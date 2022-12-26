@@ -1,83 +1,95 @@
-#root{
-  background-color: whitesmoke;
-  height: 100vh;
-}
 
 .App{
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  height: 90vh;
-  
+  align-items: center;
 }
-
-
 
 .header-container{
   display: flex;
   justify-content: space-between;
+  width: 90vw; /*Modify in Big Screen*/
+  height: 7vh;
 }
 
-.header-icon-sides{
-  height: 30px;
-  width: 30px;
-}
-
-.profile-container{
-  height: 60vh;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 20px;
+.swipe-page{
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
-  background-color: white;
-}
-
-.liked-nope-image{
-  width: 7rem;
-  transform: rotateY(0deg) rotate(-45deg);
 
 }
 
-
-.error {
+.swipe-page > .profile-container{
+  height: 85vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
 
-.error-image {
-  height: auto;
-  width: 100px;
+
+
+.profile-container > .dog-image{
+  height: 80vh;
+  width: 90vw;
+  position: relative;
+  text-align: start;
+  color: white;
+  border-radius: 15px;
 }
 
-.favorite-dog-card{
+.profile-container >.liked-nope-image{
+  position: absolute;
+  top: 20vh;
+  left: 10vw;
+  z-index: 1;
+  height: 10vh;
+  width: auto;
+  transform: rotateY(0deg) rotate(-30deg);
+}
+
+.profile-container > .profile-info{
+  position: absolute;
+  bottom: 10vh;
+  left: 8vw;
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 10px white;
+}
+
+.swipe-page > .footer-container{
+  height: 8vh;
   display: flex;
+  align-items: center;
+  gap: 20vw
+}
+
+.footer-container > img{
+  height: 6vh;
+}
+@media (min-width:1025px){
+  .App{background-color: black;}
+
+  .header-container, .swipe-page{
+    width: 40vw;
+    background-color: white;
+  }
+
+  .swipe-page > .footer-container{
+    gap: 10vw
+  }
+
+
+  .profile-container >.liked-nope-image{
+  left: 35vw;
+}
+
+.profile-container > .dog-image{
+  height: 80vh;
+  width: 35vw;
+}
+
+.profile-container > .profile-info{
+  left: 35vw;
   font-size: 2rem;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
 }
-.favorite-dog-card > img{
-  height: 100px;
-  width: 100px;
-}
-
-
-.footer-container{
-  display: flex;
-  justify-content: space-around;
-  height: 10%;
-  padding-top: 20px;
-}
-.footer-container > img {
-  max-height: 30px;
-  border-radius: 25px;
-  padding: 10px;
-  max-width: 30px;
-  background-color: white;
-  box-shadow:  0px 5px 10px black;
 }

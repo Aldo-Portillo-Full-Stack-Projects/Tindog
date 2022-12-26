@@ -2,16 +2,16 @@ import {nanoid} from 'nanoid'
 
 const dogs = [
     {
-        name: "Rex",
-        avatar: require("./rex.png"),
+        name: "Bella",
+        avatar: require("./bella.jpeg"),
         age: 25,
         bio: "Art. Literature. Natural wine. Yoga.",
         hasBeenSwiped: false,
         hasBeenLiked: false,
         id: nanoid(),
     },{
-        name: "Bella",
-        avatar: require("./bella.png"),
+        name: "Cornelius",
+        avatar: require("./cornelius.jpeg"),
         age: 43,
         bio: "Yup, that's my owner. U can meet him if you want",
         hasBeenSwiped: false,
@@ -19,8 +19,8 @@ const dogs = [
         id: nanoid(),
     },
     {
-        name: "Teddy",
-        avatar: require("./teddy.png"),
+        name: "Dexter",
+        avatar: require("./dexter.jpeg"),
         age: 30,
         bio: "How you doin?",
         hasBeenSwiped: false,
@@ -28,8 +28,8 @@ const dogs = [
         id: nanoid(),
     },
     {
-        name: "Cornelius",
-        avatar: require("./cornelius.png"),
+        name: "Dood",
+        avatar: require("./dood.jpeg"),
         age: 30,
         bio: "How you doin?",
         hasBeenSwiped: false,
@@ -37,8 +37,8 @@ const dogs = [
         id: nanoid(),
     },
     {
-        name: "Ghost",
-        avatar: require("./ghost.png"),
+        name: "Gamora",
+        avatar: require("./gamora.jpeg"),
         age: 30,
         bio: "How you doin?",
         hasBeenSwiped: false,
@@ -46,17 +46,8 @@ const dogs = [
         id: nanoid(),
     },
     {
-        name: "Jack",
-        avatar: require("./jack.png"),
-        age: 30,
-        bio: "How you doin?",
-        hasBeenSwiped: false,
-        hasBeenLiked: false,
-        id: nanoid(),
-    },
-    {
-        name: "Scooby",
-        avatar: require("./scooby.png"),
+        name: "Hunter",
+        avatar: require("./hunter.jpeg"),
         age: 30,
         bio: "How you doin?",
         hasBeenSwiped: false,
@@ -65,7 +56,7 @@ const dogs = [
     },
     {
         name: "Sydney",
-        avatar: require("./sydney.png"),
+        avatar: require("./sydney.jpeg"),
         age: 30,
         bio: "How you doin?",
         hasBeenSwiped: false,
