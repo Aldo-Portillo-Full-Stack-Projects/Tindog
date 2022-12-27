@@ -37,7 +37,7 @@ function App() {
       setRenderIcon(false)
     }, 500)
     const updatedDogData = dogData.map(dog => {
-      if(dog.id === id){
+      if(dog._id === id){
         return {
           ...dog,
           hasBeenSwiped: true,
@@ -57,7 +57,7 @@ function App() {
       setRenderIcon(false)
     }, 500)
     const updatedDogData = dogData.map(dog => {
-      if(dog.id === id){
+      if(dog._id === id){
         return {
           ...dog,
           hasBeenSwiped: true,

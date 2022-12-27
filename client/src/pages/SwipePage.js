@@ -6,8 +6,6 @@ export default function SwipePage({dogData, dogIndex, displayIcon, likeButton, n
 
   const { name, age, bio, avatar, _id} = dogData[dogIndex]
   
- 
-
   return (
     <div className='swipe-page'>
         <Profile img={avatar} name={name} age={age} bio={bio} displayIcon={displayIcon} renderIcon={renderIcon}/>
