@@ -8,6 +8,10 @@ import Error from './pages/Error';
 import {Routes, Route} from 'react-router-dom'
 import axios from 'axios';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Profile from './components/Profile';
 
 function App() {
 
@@ -77,7 +81,11 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={isLoading === false && dogIndex < dogData.length ? <SwipePage dogData={dogData} dogIndex={dogIndex} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
+        <Route exact path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/swipe" element={isLoading === false && dogIndex < dogData.length ? <SwipePage dogData={dogData} dogIndex={dogIndex} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
       <Footer />
