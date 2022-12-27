@@ -7,6 +7,7 @@ import Error from './pages/Error';
 
 import {Routes, Route} from 'react-router-dom'
 import axios from 'axios';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -79,6 +80,7 @@ function App() {
         <Route exact path="/" element={isLoading === false && dogIndex < dogData.length ? <SwipePage dogData={dogData} dogIndex={dogIndex} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
+      <Footer />
     </div>
   );
 }

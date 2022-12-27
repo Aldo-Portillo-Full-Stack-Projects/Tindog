@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .header-container{
@@ -56,14 +58,14 @@
   text-shadow: 0 0 10px black, 0 0 10px white;
 }
 
-.swipe-page > .footer-container{
+.swipe-page > .button-container{
   height: 8vh;
   display: flex;
   align-items: center;
   gap: 20vw
 }
 
-.footer-container > img{
+.button-container > img{
   height: 6vh;
 }
 @media (min-width:1025px){
@@ -74,7 +76,7 @@
     background-color: white;
   }
 
-  .swipe-page > .footer-container{
+  .swipe-page > .button-container{
     gap: 10vw
   }
 
