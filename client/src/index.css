@@ -119,6 +119,15 @@
   border-radius: 15vw;
 }
 
+.error{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error > a > img{
+  width: 80vw;
+}
+
 @media (min-width:1025px){
 
   .liked-dogs{
