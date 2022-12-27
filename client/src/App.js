@@ -6,12 +6,11 @@ import SwipePage from './pages/SwipePage';
 import Error from './pages/Error';
 
 import {Routes, Route} from 'react-router-dom'
-
-import dogs from './data/data'
+import axios from 'axios';
 
 function App() {
 
-  const [dogData, setDogData] = React.useState(dogs);
+  const [dogData, setDogData] = React.useState([]);
 
   const [displayIcon, setDisplayIcon] = React.useState(false)
 
@@ -19,20 +18,24 @@ function App() {
 
   const [dogIndex, setDogIndex] = React.useState(0);
 
-  const [endList, setEndList] = React.useState(false)
-    //console.table(dogData)
+  const [isLoading, setIsLoading] = React.useState(true)
 
-
+  React.useEffect(() => {
+    axios.get('http://localhost:5000/api/dogs')
+      .then(res => {
+        const dogs = res.data;
+        setDogData(dogs)
+        setIsLoading(false)
+      })
+  }, [])
 
   function likeButton (id) {
     setDisplayIcon(true)
     setRenderIcon(true)
-
     setTimeout(() => {
       setDogIndex(prevIndex => prevIndex + 1) 
       setRenderIcon(false)
     }, 500)
-
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
         return {
@@ -42,11 +45,8 @@ function App() {
         }
       }
       return dog
-    }
-    )
-
+    })
     setDogData(updatedDogData)
-
   }
 
   function nopeButton (id) {
@@ -56,7 +56,6 @@ function App() {
       setDogIndex(prevIndex => prevIndex + 1) 
       setRenderIcon(false)
     }, 500)
-
     const updatedDogData = dogData.map(dog => {
       if(dog.id === id){
         return {
@@ -65,27 +64,19 @@ function App() {
         }
       }
       return dog
-    }
-    )
-
+    })
     setDogData(updatedDogData)
-
   }
 
-  React.useEffect(()=> {
-    const isListDone = dogData.every(function(dog){
-      return dog.hasBeenSwiped === true
-    })
-    console.log(isListDone)
-    setEndList(isListDone)
-  }, [dogData])
 
+
+  
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={endList === false ? <SwipePage img={dogData[dogIndex].avatar} name={dogData[dogIndex].name} age={dogData[dogIndex].age} bio={dogData[dogIndex].bio} id={dogData[dogIndex].id} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
+        <Route exact path="/" element={isLoading === false && dogIndex < dogData.length ? <SwipePage dogData={dogData} dogIndex={dogIndex} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
     </div>
