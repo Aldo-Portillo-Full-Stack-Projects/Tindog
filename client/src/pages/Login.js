@@ -12,7 +12,7 @@ export default function Login() {
             <input type="password" required name="password" />
             <button type='submit'>Login</button>
         </form>
-        <h4>Dont have an account? <Link to="signup">Sign Up</Link></h4>
+        <h4>Dont have an account? <Link to="/signup">Sign Up</Link></h4>
     </div>
   )
 }
