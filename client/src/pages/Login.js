@@ -40,10 +40,10 @@ export default function Login() {
     <div className='login-page'>
         <h1>Login</h1>
         <form onSubmit={login}>
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <input type="email" required name="email" value={email} onChange={handleInputChange}/>
-            <label for="password">Password:</label>
-            <input type="password" required name="password" value={password} onChange={handleInputChange}/>
+            <label htmlFor="password">Password:</label>
+            <input type="password" required name="password" value={password} onChange={handleInputChange} autoComplete="on"/>
             <button type='submit'>Login</button>
         </form>
         <h4>Dont have an account? <Link to="/signup">Sign Up</Link></h4>
