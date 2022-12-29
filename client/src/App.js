@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './components/Profile';
+import UserProfile from './pages/UserProfile';
 
 function App() {
 
@@ -85,7 +86,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/swipe" element={isLoading === false && dogIndex < dogData.length ? <SwipePage dogData={dogData} dogIndex={dogIndex} likeButton={likeButton} nopeButton={nopeButton} displayIcon={displayIcon} renderIcon={renderIcon}/> : <Error />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/liked" element={<Liked data={dogData}/>} />
       </Routes>
       <Footer />
