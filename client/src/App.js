@@ -40,7 +40,7 @@ function App() {
   }, [dispatch])
 
   React.useEffect(() => {
-    axios.get('http://localhost:5000/api/dogs')
+    axios.get('http://localhost:5000/api/dogs/getDogs')
       .then(res => {
         const dogs = res.data;
         setDogData(dogs)
