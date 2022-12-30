@@ -67,3 +67,15 @@ export const getUser = async () => {
         
     }
 }
+
+//Add Dog to Favorite
+export const addDogtoLiked = async (dogObject) => {
+    try{    
+        const response = await axios.put(`${BACKEND_URL}/api/user/addDog`, dogObject);
+        return response.data
+    } catch(err){
+        const message = (err.response && err.response.data && err.response.data.message)|| err.message || err.toString();
+        console.log(message)
+        
+    }
+}
