@@ -38,14 +38,15 @@ export default function Login() {
         try {
           await loginUser(userData)
           await dispatch(SET_LOGIN(true))
-          navigate("/profile")
+          navigate("/swipe")
         } catch (err) {
           console.log(err)
         }
       } 
   return (
-    <div className='login-page'>
-        <h1>Login</h1>
+    <div className='login-register-page'>
+        <img src={require("../icons/firePaw.png")} alt=""/>
+        <h2>Welcome Back!</h2>
         <form onSubmit={login}>
             <label htmlFor="email">Email:</label>
             <input type="text" required name="email" value={email} onChange={handleInputChange}/>

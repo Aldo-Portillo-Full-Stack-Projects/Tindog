@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { registerUser } from '../services/authServices'
 
 export default function Signup() {
+    const navigate = useNavigate()
 
     const [formData, setFormData] = React.useState({
         name: "",
@@ -31,6 +32,7 @@ export default function Signup() {
 
         try{
             const data = await registerUser(userData)
+            navigate("/swipe")
             console.log(data)
         } catch(err){
             console.log(err);
@@ -38,8 +40,9 @@ export default function Signup() {
 
     }
   return (
-    <div className='signup-page'>
-        <h1>Sign Up</h1>
+    <div className='login-register-page'>
+        <img src={require("../icons/firePaw.png")} alt=""/>
+        <h2>Sign Up</h2>
         <form onSubmit={register}>
             <label htmlFor="name">Name:</label>
             <input type="text" required name="name" value={name} onChange={handleInputChange}/>
