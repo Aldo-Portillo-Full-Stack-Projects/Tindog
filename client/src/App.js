@@ -11,7 +11,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import UserProfile from './pages/UserProfile';
 import { useDispatch } from 'react-redux';
-import { addDogtoLiked, getLoginStatus } from './services/authServices';
+import { addDogtoLiked, BACKEND_URL, getLoginStatus } from './services/authServices';
 import { SET_LOGIN } from './redux/authSlice';
 import PageContainer from './components/PageContainer';
 
@@ -39,7 +39,7 @@ function App() {
   }, [dispatch])
 
   React.useEffect(() => {
-    axios.get('http://localhost:5000/api/dogs/getDogs')
+    axios.get(`${BACKEND_URL}/api/dogs/getDogs`)
       .then(res => {
         const dogs = res.data;
         setDogData(dogs)
