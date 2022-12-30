@@ -1,13 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { loginUser, validateEmail} from '../services/authServices'
+import { useDispatch } from 'react-redux'
+import { SET_LOGIN } from '../redux/authSlice'
+
+const initialState = {
+    email: "",
+    password: "",
+}
 
 export default function Login() {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
-    const [formData, setFormData] = React.useState({
-        email: "",
-        password: "",
-      })
+    const [formData, setFormData] = React.useState(initialState)
     const {email, password} = formData
 
       const handleInputChange = (e) => {
@@ -30,8 +36,9 @@ export default function Login() {
         }
     
         try {
-          const data = await loginUser(userData)
-          console.log(data);
+          await loginUser(userData)
+          await dispatch(SET_LOGIN(true))
+          navigate("/profile")
         } catch (err) {
           console.log(err)
         }
@@ -41,7 +48,7 @@ export default function Login() {
         <h1>Login</h1>
         <form onSubmit={login}>
             <label htmlFor="email">Email:</label>
-            <input type="email" required name="email" value={email} onChange={handleInputChange}/>
+            <input type="text" required name="email" value={email} onChange={handleInputChange}/>
             <label htmlFor="password">Password:</label>
             <input type="password" required name="password" value={password} onChange={handleInputChange} autoComplete="on"/>
             <button type='submit'>Login</button>
