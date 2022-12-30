@@ -158,6 +158,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: white;
+  width: 40vw;
 }
 .login-register-page > img {
   width: 30vw;
@@ -174,4 +176,29 @@
 .home-page-buttons{
   display: flex;
   gap: 1vw;
+}
+.profile-page{
+  background-color: white;
+  height: 100vh;
+  width: 100vw;;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+@media (min-width:1025px){
+
+  .login-register-page{
+    background-color: white;
+  }
+  .login-register-page > img {
+    width: 10vw;
+  }
+
+  .profile-page{
+    width: 40vw
+  }
+  
 }
