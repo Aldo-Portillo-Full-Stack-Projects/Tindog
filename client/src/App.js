@@ -11,8 +11,12 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Profile from './components/Profile';
 import UserProfile from './pages/UserProfile';
+import { useDispatch } from 'react-redux';
+import { getLoginStatus } from './services/authServices';
+import { SET_LOGIN } from './redux/authSlice';
+
+axios.defaults.withCredentials = true;
 
 function App() {
 
@@ -25,6 +29,15 @@ function App() {
   const [dogIndex, setDogIndex] = React.useState(0);
 
   const [isLoading, setIsLoading] = React.useState(true)
+
+  const dispatch = useDispatch();
+  React.useEffect(()=> {
+    async function loginStatus() {
+      const status = await getLoginStatus()
+      dispatch(SET_LOGIN(status))
+    }
+    loginStatus()
+  }, [dispatch])
 
   React.useEffect(() => {
     axios.get('http://localhost:5000/api/dogs')
