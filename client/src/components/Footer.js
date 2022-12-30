@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <div>Tindog &copy; Aldo Portillo 2022</div>
   )
 }
