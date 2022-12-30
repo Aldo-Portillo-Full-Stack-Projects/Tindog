@@ -13,7 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import UserProfile from './pages/UserProfile';
 import { useDispatch } from 'react-redux';
-import { getLoginStatus } from './services/authServices';
+import { addDogtoLiked, getLoginStatus } from './services/authServices';
 import { SET_LOGIN } from './redux/authSlice';
 
 axios.defaults.withCredentials = true;
@@ -48,9 +48,11 @@ function App() {
       })
   }, [])
 
-  function likeButton (id) {
+  async function likeButton (id) {
+    console.log(dogData[dogIndex])
     setDisplayIcon(true)
     setRenderIcon(true)
+    await addDogtoLiked(dogData[dogIndex])
     setTimeout(() => {
       setDogIndex(prevIndex => prevIndex + 1) 
       setRenderIcon(false)
