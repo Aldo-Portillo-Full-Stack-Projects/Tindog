@@ -22,7 +22,7 @@ export const registerUser = async (userData) => {
 
 export const loginUser = async (userData) => {
     try{    
-        const response = await axios.post(`${BACKEND_URL}/api/user/login`, userData);
+        const response = await axios.post(`https://adopt-tindog-server.onrender.com/api/user/login`, userData);
         if (response.statusText === "OK") {
             console.log("Login Successful")
         }
