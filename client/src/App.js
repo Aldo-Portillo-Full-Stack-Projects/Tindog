@@ -48,7 +48,6 @@ function App() {
   }, [])
 
   async function likeButton (id) {
-    console.log(dogData[dogIndex])
     setDisplayIcon(true)
     setRenderIcon(true)
     await addDogtoLiked(dogData[dogIndex])
